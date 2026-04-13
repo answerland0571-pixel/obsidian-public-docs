@@ -5,10 +5,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -20,7 +23,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install mkdocs-material mkdocs-auth
 
-      - name: Build site
+      - name: Build MkDocs site
         run: mkdocs build
 
       - name: Deploy to GitHub Pages
