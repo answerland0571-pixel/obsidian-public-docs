@@ -16,10 +16,11 @@ theme:
 
 plugins:
   - search
-  - auth:
-      provider: htpasswd
-      auth_file: .htpasswd
-      realm: "请输入密码访问"
+  - mkdocs-material-extended:
+      auth:
+        enabled: true
+        users:
+          admin: $2y$10$dummy$E9Ux0UoPqDkC8X7g8X8h01
 
 markdown_extensions:
   - attr_list
