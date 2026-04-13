@@ -1,5 +1,6 @@
 site_name: 我的私人知识库
 site_url: https://answerland0571-pixel.github.io/obsidian-public-docs/
+site_dir: site
 
 theme:
   name: material
@@ -7,16 +8,18 @@ theme:
     - scheme: default
       toggle:
         icon: material/brightness-7
+        name: 切换到深色模式
     - scheme: slate
       toggle:
         icon: material/brightness-4
+        name: 切换到浅色模式
 
 plugins:
   - search
   - auth:
       provider: htpasswd
       auth_file: .htpasswd
-      realm: "Answerland0571"
+      realm: "请输入密码访问"
 
 markdown_extensions:
   - attr_list
